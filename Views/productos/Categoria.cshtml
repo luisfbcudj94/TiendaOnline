@@ -1,0 +1,55 @@
+﻿@model IEnumerable<WebProductos.Models.productosModel>
+
+
+@{
+    ViewData["Title"] = "Categoria";
+
+    List<string> categorias = new List<string>();
+    //categorias.Add(@Html.DisplayFor(modelItem => item.Categoria));
+
+    @foreach (var item in Model)
+    {
+
+        categorias.Add((item.Categoria));
+
+    }
+    List<string> categoriaSinDuplicados = categorias.Distinct().ToList();
+}
+<h1 class="text-md-right">Catalogo de productos</h1>
+
+<div class="alert-primary ">
+    <h3 class="ml-2">Categorias</h3>
+</div>
+
+
+
+@foreach (var item in categoriaSinDuplicados)
+{
+    <a class="btn btn-outline-primary m-2" asp-controller="productos" asp-action="Categoria" asp-route-Categoria="@item">@item</a>
+}
+
+
+
+<div class="container">
+
+    <div class="row mt-5">
+        @foreach (var item in Model)
+        {
+
+            <div class="col-sm-4 mt-3">
+                <div class="card">
+                    <img src="../imagenes/hero1.jpg" height="200" width="500" alt="foto1">
+                    <div class="card-body">
+                        <h5 class="card-title">@Html.DisplayFor(modelItem => item.Codigo)</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">@Html.DisplayFor(modelItem => item.Nombre)</h6>
+                        <p class="card-text">@Html.DisplayFor(modelItem => item.Categoria)</p>
+                        <p class="card-text">@Html.DisplayFor(modelItem => item.Precio)</p>
+                        <p class="card-text">@Html.DisplayFor(modelItem => item.FechaCreacion)</p>
+
+                        @Html.ActionLink("Edit", "AddOrEdit", new { id = item.Id })
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
