@@ -1,6 +1,5 @@
 # ASP.NET CORE C#
 
-[TOC]
 
 #### Tienda Online
 
