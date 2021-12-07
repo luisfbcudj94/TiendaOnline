@@ -1,7 +1,7 @@
 # ASP.NET CORE C#
 
 
-#### Tienda Online
+## Tienda Online
 
 En el actual desarrollo usted encontrará una aplicación para el control de productos de un almacén comercial, en donde usted podrá asignar precio, cantidad, descripción e imagen para cada producto. también podrá filtrar por secciones los productos, logrando de esta manera simplificar la visualización de la información.
 
